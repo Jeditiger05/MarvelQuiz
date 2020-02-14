@@ -1,0 +1,10 @@
+.row{
+    display: inline-block;
+    margin: 10px;
+    width: 420px;
+}
+
+button{
+    width: 200px;
+    margin: 5px;
+}

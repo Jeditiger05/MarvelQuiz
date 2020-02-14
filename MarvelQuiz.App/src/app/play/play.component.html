@@ -1,1 +1,18 @@
-<p>play works!</p>
+<div class="play">
+    <div>
+        <button id="getQuiz" class="btn btn-danger" (click)="onButtonClick()">Get Quiz</button>
+    </div>
+    <div><span id="question"> 
+
+    </span></div>
+    <div id="answers" class="row" role="group">
+        <button id="ans1" type="button" class="btn btn-outline-success"></button>
+        <button id="ans2" type="button" class="btn btn-outline-success"></button>
+        <button id="ans3" type="button" class="btn btn-outline-success"></button>
+        <button id="ans4" type="button" class="btn btn-outline-success"></button>
+    </div>
+
+    <div>
+        <button id="ans1" class="btn btn-outline-success" (click)="onButtonClickNext()">Next</button>
+    </div>
+</div>
