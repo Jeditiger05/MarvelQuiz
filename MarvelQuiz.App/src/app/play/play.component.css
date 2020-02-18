@@ -4,6 +4,10 @@
     width: 420px;
 }
 
+.play{
+	background: #edde9c;
+}
+
 span{
     font-weight: bold;
     font-family: Arial ;
@@ -12,7 +16,9 @@ span{
 
 .btn{
     width: 200px;
-    margin: 5px;
+	margin: 5px;
+	font-weight: bolder;
+	color: black;
 }
 
 .myButton {

@@ -10,13 +10,11 @@ import { QuestionResponceModel } from '../Models/QuestionResponceModel';
 export class PlayComponent implements OnInit {
 
   public questionsList: QuestionResponceModel[];
-  showQuiz: boolean = false;
-  ind: number = 0
+  index: number = 0
 
   constructor(public questService: QuestionsService) { }
 
   ngOnInit() {
-    $('#answers').hide();
   }
 
   onButtonClick() {
@@ -28,15 +26,8 @@ export class PlayComponent implements OnInit {
   }
 
   onButtonClickNext(){
-    $('#answers').show();
-    $('#question').html(this.questionsList[this.ind].quest);
-    $('#ans1').html(this.questionsList[this.ind].ans1);
-    $('#ans2').html(this.questionsList[this.ind].ans2);
-    $('#ans3').html(this.questionsList[this.ind].ans3);
-    $('#ans4').html(this.questionsList[this.ind].ans4);
-    this.ind++;
-    if(this.ind == this.questionsList.length)
-    this.ind = 0;
-    this.showQuiz = true;
+    this.index++;
+    if(this.index == this.questionsList.length)
+    this.index = 0;
   }
 }
