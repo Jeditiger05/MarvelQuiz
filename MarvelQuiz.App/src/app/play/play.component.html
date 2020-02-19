@@ -1,6 +1,6 @@
 <div class="play">
     <div>
-        <button class="myButton" (click)="onButtonClick()">Get Quiz</button>
+        <button class="myButton" (click)="onButtonClick()">Start Quiz</button>
     </div>
 
 
@@ -16,7 +16,7 @@
             class="btn btn-success">{{this.questionsList[this.index].ans4}}</button>
         <div><span>{{this.answer}}</span></div>
     </div>
-    <div>
-        <button class="myButton1" (click)="onButtonClickNext()">Next</button>
+    <div *ngIf="this.questionsList">
+        <button [disabled]="!this.answer" class="btn btn-primary" (click)="onButtonClickNext()">Next</button>
     </div>
 </div>
