@@ -2,15 +2,16 @@
     <div>
         <button class="myButton" (click)="onButtonClick()">Get Quiz</button>
     </div>
-    <div><span id="question">{{this.questionsList[this.index].quest}}</span></div>
+    
     
     <div *ngIf="this.questionsList" class="row" role="group">
-        <button id="ans1" type="button" class="btn btn-success">{{this.questionsList[this.index].ans1}}</button>
-        <button id="ans2" type="button" class="btn btn-success">{{this.questionsList[this.index].ans2}}</button>
-        <button id="ans3" type="button" class="btn btn-success">{{this.questionsList[this.index].ans3}}</button>
-        <button id="ans4" type="button" class="btn btn-success">{{this.questionsList[this.index].ans4}}</button>
+        <div><span>{{this.questionsList[this.index].quest}}</span></div>
+        <button (click)="myAnswer($event)" id="ans1" type="button" class="btn btn-success">{{this.questionsList[this.index].ans1}}</button>
+        <button (click)="myAnswer($event)" id="ans2" type="button" class="btn btn-success">{{this.questionsList[this.index].ans2}}</button>
+        <button (click)="myAnswer($event)" id="ans3" type="button" class="btn btn-success">{{this.questionsList[this.index].ans3}}</button>
+        <button (click)="myAnswer($event)" id="ans4" type="button" class="btn btn-success">{{this.questionsList[this.index].ans4}}</button>
+        <div><span>{{this.answer}}</span></div>
     </div>
-
     <div>
         <button class="myButton1" (click)="onButtonClickNext()">Next</button>
     </div>

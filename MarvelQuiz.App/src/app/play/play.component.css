@@ -8,6 +8,12 @@
 	background: #edde9c;
 }
 
+.answe{
+	width: 150;
+	height: 50;
+	margin-top: 50px;
+}
+
 span{
     font-weight: bold;
     font-family: Arial ;
