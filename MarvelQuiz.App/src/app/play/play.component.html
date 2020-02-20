@@ -6,7 +6,7 @@
 
     <div *ngIf="this.questionsList" class="row" role="group">
         <div><span>{{this.questionsList[this.index].quest}}</span></div>
-        <div><img  width="180" height="280" src="https://localhost:5001/api/questions/image?image={{this.index}}"></div>
+        <div><img class="myImage" width="180" height="280" src="https://localhost:5001/api/questions/image?image={{this.index}}"></div>
         <button [disabled]="this.answer" (click)="myAnswer($event)" id="ans1" type="button"
             class="btn btn-success">{{this.questionsList[this.index].ans1}}</button>
         <button [disabled]="this.answer" (click)="myAnswer($event)" id="ans2" type="button"

@@ -46,3 +46,7 @@ span{
 	position:relative;
 	top:1px;
 }
+
+.myImage{
+	border: #810e05 solid 2px;
+}
