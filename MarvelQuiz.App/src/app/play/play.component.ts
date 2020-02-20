@@ -10,7 +10,7 @@ import { QuestionResponceModel } from '../Models/QuestionResponceModel';
 export class PlayComponent implements OnInit {
 
   public questionsList: QuestionResponceModel[];
-  index: number = 0
+  public index: number = 0;
   answer: string;
 
   constructor(public questService: QuestionsService) { }
