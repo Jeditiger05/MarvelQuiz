@@ -12,26 +12,24 @@ namespace MarvelQuiz.Api.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-        List<Question> quiz = new List<Question>();
+        private List<Question> quiz = new List<Question>() 
+        {
+            (new Question("What Color is the Incredible Hulk?", "Green", "Red", "Blue", "Yellow", "ans1", "hulk.JPG")),
+            (new Question("What does Captain America use to battle Villians?", "Hammer", "Sword", "Shield", "Blaster", "ans3", "captainA.JPG")),
+            (new Question("Who does Black Widow work for?", "Hydra", "Tony Stark", "F.B.I", "S.H.I.E.L.D", "ans4", "widow.JPG")),
+            (new Question("Where does the Black Panther Live?", "Jungle", "Wakanda", "S.H.I.E.L.D", "America", "ans2", "panther.JPG"))
+        };
+
         public List<Question> GetQuestions()
         {
-            quiz.Add(new Question("What Color is the Incredible Hulk?", "Green", "Red", "Blue", "Yellow", "ans1"));
-            quiz.Add(new Question("What does Captain America use to battle Villians?", "Hammer", "Sword", "Shield", "Blaster", "ans3"));
-            quiz.Add(new Question("Who does Black Widow work for?", "Hydra", "Tony Stark", "F.B.I", "S.H.I.E.L.D", "ans4"));
-
-            return quiz;
+            return this.quiz;
         }
 
         [HttpGet("image")]
-        public IActionResult Get(int image)
+        public IActionResult Get(string image)
         {
-            switch (image)
-            {
-                case 0: return PhysicalFile(@"C:\Users\John\Projects\MarvelQuiz\MarvelQuiz.Api\MarvelQuiz.Api\Images\hulk.JPG", "image/jpeg");
-                case 1: return PhysicalFile(@"C:\Users\John\Projects\MarvelQuiz\MarvelQuiz.Api\MarvelQuiz.Api\Images\captainA.JPG", "image/jpeg");
-                case 2: return PhysicalFile(@"C:\Users\John\Projects\MarvelQuiz\MarvelQuiz.Api\MarvelQuiz.Api\Images\widow.JPG", "image/jpeg");
-                default: return null;
-            }
+            return PhysicalFile(@"C:\Users\John\Projects\MarvelQuiz\MarvelQuiz.Api\MarvelQuiz.Api\Images\" + image, "image /jpeg");
+
         }
     }
 }

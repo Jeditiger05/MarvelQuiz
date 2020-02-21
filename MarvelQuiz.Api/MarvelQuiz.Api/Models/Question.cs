@@ -13,8 +13,9 @@ namespace MarvelQuiz.Api.Models
         public string Ans3 { get; set; }
         public string Ans4 { get; set; }
         public string Correct { get; set; }
+        public string Image { get; set; }
 
-        public Question(string quest, string ans1, string ans2, string ans3, string ans4, string correct)
+        public Question(string quest, string ans1, string ans2, string ans3, string ans4, string correct, string image)
         {
             Quest = quest;
             Ans1 = ans1;
@@ -22,6 +23,7 @@ namespace MarvelQuiz.Api.Models
             Ans3 = ans3;
             Ans4 = ans4;
             Correct = correct;
+            Image = image;
         }
     }
 }
