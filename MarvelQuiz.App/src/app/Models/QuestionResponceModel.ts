@@ -5,5 +5,6 @@ export class QuestionResponceModel{
     ans3: string;
     ans4: string;
     correct: string;
+    image: string;
 
 }
