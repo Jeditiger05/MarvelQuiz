@@ -33,8 +33,8 @@ namespace MarvelQuiz.Api.Controllers
             {
                 do
                 {
-                    randomQ = questionsList[(num.Next(0, questionsList.Count))];
-                } while (quiz.IndexOf(randomQ) > -1);
+                    randomQ = this.questionsList[(num.Next(0, this.questionsList.Count))];
+                } while (quiz.Contains(randomQ)); //(quiz.IndexOf(randomQ) > -1);
 
                 quiz.Add(randomQ);
             }
