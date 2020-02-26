@@ -13,7 +13,7 @@ export class PlayComponent implements OnInit {
   public index: number = 0;
   answer: string;
 
-  constructor(public questService: QuestionsService) { }
+  constructor(private questService: QuestionsService) { }
 
   ngOnInit() {
   }
@@ -23,7 +23,7 @@ export class PlayComponent implements OnInit {
       this.answer = "Correct";
     else
       this.answer = "Wrong";
-    console.log(event.target.id);
+    console.log(event.target.value);
   }
 
   onButtonClick() {
