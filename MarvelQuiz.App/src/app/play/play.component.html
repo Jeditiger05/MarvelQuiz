@@ -1,13 +1,19 @@
 <div class="play">
     <div>
-        <button class="myButton" (click)="onButtonClick()">Start Quiz</button>
+        <button class="startQuizBtn" (click)="onButtonClick()">Start Quiz</button>
     </div>
 
 
     <div *ngIf="this.questionsList" class="row" role="group">
-        <div><span>{{this.questionsList[this.index].quest}}</span></div>
-        <div><img class="myImage" width="180" height="280"
-                src="https://localhost:5001/api/questions/image?image={{this.questionsList[this.index].image}}"></div>
+        <div class="myQuestion">
+            <span>{{this.questionsList[this.index].quest}}<br>
+                <span class="myAnswer {{this.className}}">{{this.answer}}</span>
+            </span>
+        </div>
+        <div>
+            <img class="myImage"
+                src="https://localhost:5001/api/questions/image?image={{this.questionsList[this.index].image}}">
+        </div>
         <button [disabled]="this.answer" (click)="myAnswer($event)" id="ans1" type="button"
             class="btn btn-success">{{this.questionsList[this.index].ans1}}</button>
         <button [disabled]="this.answer" (click)="myAnswer($event)" id="ans2" type="button"
@@ -16,9 +22,10 @@
             class="btn btn-success">{{this.questionsList[this.index].ans3}}</button>
         <button [disabled]="this.answer" (click)="myAnswer($event)" id="ans4" type="button"
             class="btn btn-success">{{this.questionsList[this.index].ans4}}</button>
-        <div><span>{{this.answer}}</span></div>
+        <!-- <p class="myAnswer {{this.className}}" >{{this.answer}}</p> -->
+        <div class="nxtBtn">
+            <button *ngIf="this.answer" class="btn btn-primary" (click)="onButtonClickNext()">Next</button>
+        </div>
     </div>
-    <div *ngIf="this.questionsList">
-        <button [disabled]="!this.answer" class="btn btn-primary" (click)="onButtonClickNext()">Next</button>
-    </div>
+
 </div>

@@ -12,6 +12,7 @@ export class PlayComponent implements OnInit {
   public questionsList: QuestionResponceModel[];
   public index: number = 0;
   answer: string;
+  className: string;
 
   constructor(private questService: QuestionsService) { }
 
@@ -19,11 +20,14 @@ export class PlayComponent implements OnInit {
   }
 
   myAnswer(event) {
-    if (event.target.id == this.questionsList[this.index].correct)
-      this.answer = "Correct";
-    else
-      this.answer = "Wrong";
-    console.log(event.target.value);
+    if (event.target.id == this.questionsList[this.index].correct) {
+      this.answer = "✔";
+      this.className = "right";
+    }
+    else {
+      this.answer = "✘";
+      this.className = "wrong";
+    }
   }
 
   onButtonClick() {
@@ -36,6 +40,7 @@ export class PlayComponent implements OnInit {
 
   onButtonClickNext() {
     this.answer = "";
+    this.className = "";
     this.index++;
     if (this.index == this.questionsList.length)
       this.index = 0;
