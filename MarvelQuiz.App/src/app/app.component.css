@@ -1,7 +1,10 @@
 .mainComponent{
+	display: inline-block;
 	text-align: center;
 	background: #edde9c;
-	height: 900px;
+	height: 950px;
+	width: 440px;
+	border: black solid 1px;
 }
 
 .myButton {
