@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../questions.service';
 import { QuestionResponceModel } from '../Models/QuestionResponceModel';
 
+//This is my Marvel App
+
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
